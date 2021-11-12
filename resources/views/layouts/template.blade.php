@@ -58,11 +58,20 @@
                 <span>Ingresos</span></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#navieras">
+            <a class="nav-link" href="{{route('navieras.index')}}">
                 <i class="fas fa-fw fa-chart-area"></i>
                 <span>Navieras</span></a>
         </li>
-
+        <li class="nav-item">
+            <a class="nav-link" href="{{route('buques.index')}}">
+                <i class="fas fa-fw fa-chart-area"></i>
+                <span>Buques</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{route('contenedores.index')}}">
+                <i class="fas fa-fw fa-chart-area"></i>
+                <span>Contenedores</span></a>
+        </li>
 
         <!-- Divider -->
         <hr class="sidebar-divider d-none d-md-block">

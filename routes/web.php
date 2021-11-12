@@ -21,6 +21,9 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 Route::get('/ingresos', [App\Http\Controllers\IngresosController::class, 'all'])->name('ingresos.all');
+Route::get('/navieras', [App\Http\Controllers\NavierasController::class, 'index'])->name('navieras.index');
+Route::get('/buques', [App\Http\Controllers\BuquesController::class, 'index'])->name('buques.index');
+Route::get('/contenedores', [App\Http\Controllers\ContenedoresController::class, 'index'])->name('contenedores.index');
 
 Route::get('/registrar-ingresos', [App\Http\Controllers\IngresosController::class, 'index'])->name('ingresos.index');
 Route::post('/ingresos_store', [App\Http\Controllers\IngresosController::class, 'store'])->name('ingresos.store');

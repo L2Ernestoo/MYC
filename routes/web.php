@@ -13,9 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('pages.index');
-})->name('home');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -28,5 +26,9 @@ Route::get('/contenedores', [App\Http\Controllers\ContenedoresController::class,
 Route::get('/registrar-ingresos', [App\Http\Controllers\IngresosController::class, 'index'])->name('ingresos.index');
 Route::post('/ingresos_store', [App\Http\Controllers\IngresosController::class, 'store'])->name('ingresos.store');
 
+
+//Cliente
+Route::get('/consultar', [App\Http\Controllers\ConsultaController::class, 'index'])->name('consultar.index');
+Route::post('/consultar-retenido', [App\Http\Controllers\ConsultaController::class, 'consulta'])->name('consultar.retenido');
 
 require __DIR__.'/auth.php';

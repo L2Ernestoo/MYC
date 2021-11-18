@@ -23,7 +23,7 @@ class IngresosController extends Controller
         $ingresos = Ingreso::join('contenedores', 'contenedores.id', '=', 'ingresos.contenedores_id')
             ->join('navieras', 'navieras.id', '=', 'ingresos.navieras_id')
             ->join('buques', 'buques.id', '=', 'ingresos.buques_id')
-            ->join('retenciones', 'retenciones.id', '=', 'ingresos.retenciones_id')
+            ->leftJoin('retenciones', 'retenciones.id', '=', 'ingresos.retenciones_id')
             ->select(
                 'ingresos.*',
                 'navieras.nombre as naviera',

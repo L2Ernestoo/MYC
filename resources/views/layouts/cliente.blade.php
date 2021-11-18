@@ -21,18 +21,12 @@
             </div>
             <div class="sidebar-brand-text mx-3">CONTENEDOR <sup>PRO</sup></div>
         </a>
-        <hr class="sidebar-divider my-0">
-        <li class="nav-item active">
-            <a class="nav-link" href="{{route('home')}}">
-                <i class="fas fa-fw fa-tachometer-alt"></i>
-                <span>Inicio</span></a>
-        </li>
         <hr class="sidebar-divider">
         <div class="sidebar-heading">
             GESTIONES
         </div>
         <li class="nav-item">
-            <a class="nav-link" href="{{route('ingresos.index')}}">
+            <a class="nav-link" href="{{route('consultar.index')}}">
                 <i class="fas fa-fw fa-chart-area"></i>
                 <span>Consultar</span></a>
         </li>

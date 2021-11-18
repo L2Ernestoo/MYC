@@ -26,9 +26,16 @@ Route::get('/contenedores', [App\Http\Controllers\ContenedoresController::class,
 Route::get('/registrar-ingresos', [App\Http\Controllers\IngresosController::class, 'index'])->name('ingresos.index');
 Route::post('/ingresos_store', [App\Http\Controllers\IngresosController::class, 'store'])->name('ingresos.store');
 
+Route::get('solicitud-de-revisiones', [App\Http\Controllers\IngresosController::class, 'revisiones'])->name('revisiones.index');
+Route::get('aprobar-solicitud/{id}', [App\Http\Controllers\IngresosController::class, 'aprobar'])->name('revisiones.aprobar');
 
 //Cliente
+//Consultar Retención
 Route::get('/consultar', [App\Http\Controllers\ConsultaController::class, 'index'])->name('consultar.index');
 Route::post('/consultar-retenido', [App\Http\Controllers\ConsultaController::class, 'consulta'])->name('consultar.retenido');
+
+//Solicitar Revisión
+Route::get('/solicitar-revision', [App\Http\Controllers\RevisionController::class, 'index'])->name('revision.index');
+Route::post('/generar-revision', [App\Http\Controllers\RevisionController::class, 'generar'])->name('revision.generar');
 
 require __DIR__.'/auth.php';

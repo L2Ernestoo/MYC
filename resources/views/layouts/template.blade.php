@@ -72,6 +72,11 @@
                 <i class="fas fa-fw fa-chart-area"></i>
                 <span>Contenedores</span></a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{route('revisiones.index')}}">
+                <i class="fas fa-fw fa-chart-area"></i>
+                <span>Solicitudes de Revisiones</span></a>
+        </li>
 
         <!-- Divider -->
         <hr class="sidebar-divider d-none d-md-block">

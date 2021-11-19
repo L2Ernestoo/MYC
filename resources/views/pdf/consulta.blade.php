@@ -85,7 +85,7 @@
     <div class="bg-azul mb-4"></div>
 <div class="row mt-4" style="margin-top:25px!important;">
     <div class="col-xs-6 field">
-       NO REVISION: {{$contenedor->id}} @if($newRevision) / Duca: {{$newRevision->duca}} @endif
+       NO REVISION: {{$contenedor->id}} @isset($newRevision) / Duca: {{$newRevision->duca}} @endisset
     </div>
     <div class="col-xs-6 field">
         CONTENEDOR: {{$contenedor->no_contenedor}}

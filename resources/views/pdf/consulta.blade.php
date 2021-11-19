@@ -85,7 +85,7 @@
     <div class="bg-azul mb-4"></div>
 <div class="row mt-4" style="margin-top:25px!important;">
     <div class="col-xs-6 field">
-       TOKEN: {{$contenedor->id}}
+       NO REVISION: {{$contenedor->id}} @if($newRevision) / Duca: {{$newRevision->duca}} @endif
     </div>
     <div class="col-xs-6 field">
         CONTENEDOR: {{$contenedor->no_contenedor}}
@@ -105,6 +105,12 @@
     </div>
     <div class="col-xs-6 field">
         FECHA: {{$contenedor->created_at}}
+    </div>
+</div>
+<div class="row">
+    <div style="color: #a23636; margin-top: 15px; font-size: 16px;" class="text-center text-red-700">
+        DOCUMENTO UNICO DE IDETNFICACIÓN PARA ELABORAR REVISION EN RAMPA. <br>
+        {{base64_encode(md5($contenedor->id))}}
     </div>
 </div>
 </body>

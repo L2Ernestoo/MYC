@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Ingreso;
 use App\Models\Revision;
+use Barryvdh\DomPDF\Facade as PDF;
 use Illuminate\Http\Request;
 
 class RevisionController extends Controller
@@ -15,7 +16,10 @@ class RevisionController extends Controller
 
     public function generar(Request $request){
         $contenedor = Ingreso::join('contenedores', 'contenedores.id', '=', 'ingresos.contenedores_id')
-            ->select('ingresos.*', 'contenedores.no_contenedor')
+            ->join('navieras', 'navieras.id', '=', 'ingresos.navieras_id')
+            ->join('buques', 'buques.id', '=', 'ingresos.buques_id')
+            ->join('retenciones', 'retenciones.id', '=', 'ingresos.retenciones_id')
+            ->select('ingresos.*', 'contenedores.no_contenedor', 'buques.nombre as buque', 'navieras.nombre as naviera', 'retenciones.nombre as retencion')
             ->where('contenedores.no_contenedor', $request->numero_contenedor)
             ->first();
 
@@ -35,7 +39,14 @@ class RevisionController extends Controller
                     $newRevision->duca = $request->duca;
                     $newRevision->estatus = 1; //1 Pendiente - 2 - Aprobada
                     $newRevision->save();
-                    return redirect()->back()->with('mensaje','Su solicitud de revision fue ingresada');
+
+                    $view = view('pdf.consulta', compact('contenedor', 'newRevision'));
+
+                    return PDF::loadHTML($view)
+                        ->setPaper('letter')
+                        ->download('CONSULTA-'.$contenedor->id.'.pdf');
+
+//                    return redirect()->back()->with('mensaje','Su solicitud de revision fue ingresada');
                 }
             }else{
                 return redirect()->back()->with('mensaje','El contenedor esta libre');

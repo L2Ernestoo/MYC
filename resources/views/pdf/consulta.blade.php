@@ -107,11 +107,13 @@
         FECHA: {{$contenedor->created_at}}
     </div>
 </div>
+@isset($newRevision)
 <div class="row">
     <div style="color: #a23636; margin-top: 15px; font-size: 14px;" class="text-center text-red-700">
         DOCUMENTO UNICO DE IDENTIFICACIÓN PARA ELABORAR REVISION EN RAMPA. <br>
         {{base64_encode(md5($contenedor->id))}}
     </div>
 </div>
+    @endisset
 </body>
 </html>

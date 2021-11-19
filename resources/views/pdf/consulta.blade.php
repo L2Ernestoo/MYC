@@ -108,8 +108,8 @@
     </div>
 </div>
 <div class="row">
-    <div style="color: #a23636; margin-top: 15px; font-size: 16px;" class="text-center text-red-700">
-        DOCUMENTO UNICO DE IDETNFICACIÓN PARA ELABORAR REVISION EN RAMPA. <br>
+    <div style="color: #a23636; margin-top: 15px; font-size: 14px;" class="text-center text-red-700">
+        DOCUMENTO UNICO DE IDENTIFICACIÓN PARA ELABORAR REVISION EN RAMPA. <br>
         {{base64_encode(md5($contenedor->id))}}
     </div>
 </div>

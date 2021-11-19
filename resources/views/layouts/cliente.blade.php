@@ -19,7 +19,7 @@
             <div class="sidebar-brand-icon rotate-n-15">
                 <i class="fas fa-laugh-wink"></i>
             </div>
-            <div class="sidebar-brand-text mx-3">CONTENEDOR <sup>PRO</sup></div>
+            <div class="sidebar-brand-text mx-3">3M <sup>B</sup></div>
         </a>
         <hr class="sidebar-divider">
         <div class="sidebar-heading">
